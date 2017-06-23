@@ -4,6 +4,9 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import firebase from 'firebase'
+import {MuiThemeProvider} from 'material-ui/styles'
+import {Provider} from 'react-redux'
+import Store from './redux/store'
 
 const config = {
     apiKey: "AIzaSyAi4LDAXirt_xnXLu5KnypbcVO9rRr_Ju0",
@@ -15,5 +18,5 @@ const config = {
   };
   firebase.initializeApp(config);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store={Store} ><MuiThemeProvider><App /></MuiThemeProvider></Provider> , document.getElementById('root'));
 registerServiceWorker();
