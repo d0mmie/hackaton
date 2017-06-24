@@ -2,3 +2,12 @@ body {
   margin: 0;
   padding: 0;
 }
+a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
