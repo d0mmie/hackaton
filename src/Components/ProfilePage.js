@@ -21,8 +21,10 @@ class ProfilePage extends Component {
     render() {
         return (
             <div>
-                {this.props.store.user ?(this.props.store.isLogin === false?<RaisedButton primary label="Login to Facebook" onTouchTap={this.LoginFacebook}  />:
-                <Card>
+                {this.props.store.user ?(this.props.store.isLogin === false?<div style={{margin:20,textAlign:'center'}}>
+                        <RaisedButton primary label="Login to Facebook" onTouchTap={this.LoginFacebook}  />
+                    </div>:
+                <Card style={{margin:20}} >
                     <CardHeader title={this.props.store.user.displayName} subtitle={this.props.store.user.uid}  avatar={this.props.store.user.photoURL} />
                     <CardText>
                         <p>Your Chears Score : {this.props.store.cheerPoint}</p>

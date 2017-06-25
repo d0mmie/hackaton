@@ -1,15 +1,29 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Cheer App",
+  "name": "Make for Everyone Cheer",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "icon/appicon96",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "icon/appicon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "icon/appicon192.png",
       "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon/appicon192.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/index.html",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait"
 }
