@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReduxCon from '../redux/redux-connect'
 import {RaisedButton,Card,CardHeader,CardActions,CardText} from 'material-ui'
 import firebase from 'firebase'
+import FBLogin from '../fb_login.png'
 
 class ProfilePage extends Component {
     componentDidMount(){
@@ -22,7 +23,7 @@ class ProfilePage extends Component {
         return (
             <div>
                 {this.props.store.user ?(this.props.store.isLogin === false?<div style={{margin:20,textAlign:'center'}}>
-                        <RaisedButton primary label="Login to Facebook" onTouchTap={this.LoginFacebook}  />
+                        <img src={FBLogin} alt="" onClick={this.LoginFacebook}/>
                     </div>:
                 <Card style={{margin:20}} >
                     <CardHeader title={this.props.store.user.displayName} subtitle={this.props.store.user.uid}  avatar={this.props.store.user.photoURL} />
