@@ -31,6 +31,12 @@ export default {
                     payload:data
                 })
             },
+            SetAllMyCheer:(data)=>{
+                dispatch({
+                    type:"SET_AllMyCheer",
+                    payload:data
+                })
+            },
             dispatch:dispatch
         }
     },

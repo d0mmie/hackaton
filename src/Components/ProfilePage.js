@@ -27,7 +27,7 @@ class ProfilePage extends Component {
                 <Card style={{margin:20}} >
                     <CardHeader title={this.props.store.user.displayName} subtitle={this.props.store.user.uid}  avatar={this.props.store.user.photoURL} />
                     <CardText>
-                        <p>Your Chears Score : {this.props.store.cheerPoint}</p>
+                        <p>Your Cheer Point : {this.props.store.cheerPoint}</p>
                     </CardText>
                     <CardActions>
                         <RaisedButton secondary label="SignOut" onTouchTap={this.Logout} />

@@ -55,9 +55,9 @@ class HomePage extends Component {
             })))}
         return (
             <div>
-                {this.props.store.user?(this.props.store.isLogin === true?<Card >
+                {this.props.store.user?(this.props.store.isLogin === true?<div><Card >
                     <CardHeader avatar={this.props.store.user.photoURL} actAsExpander showExpandableButton title="Submit your Cheer" subtitle="Tap to toggle expand" />
-                    <CardActions>
+                    <CardActions style={{textAlign:'center',verticalAlign:'middle'}} >
                         <DropDownMenu value={this.state.teamOne} onChange={(e,i,val)=>this.setState({teamOne:val})}>
                             {this.footballTeam.map((data)=><MenuItem primaryText={data} disabled={this.state.teamTwo === data ? true:false} value={data} key={Math.random().toString()} />)}
                         </DropDownMenu> <span style={{fontSize:'2em',lineHeight:1.5}} >VS</span> <DropDownMenu value={this.state.teamTwo} onChange={(e,i,val)=>this.setState({teamTwo:val})}>
@@ -70,21 +70,20 @@ class HomePage extends Component {
                     <CardActions style={{textAlign:'right'}} >
                         <RaisedButton label="Submit" secondary onTouchTap={submitCheer} />
                     </CardActions>
-                </Card>: <Card >
-                        <CardHeader style={{fontWeight:'bold'}} title="You're not Sign in" />
-                        <CardText>
-                            <p>Clink <FlatButton label="Here" onTouchTap={()=>this.props.history.push('/profile')} /> to Sign In</p>
-                        </CardText>
-                    </Card>):<div style={{textAlign:'center',padding:10}} ><CircularProgress /></div>}
-                    {this.state.loading === false?(this.state.allPoll === null?<Paper style={{textAlign:'center',padding:20,marginTop:20,color:'#aaaaaa'}} zDepth={1} >Nothing Poll</Paper>:Object.keys(this.state.allPoll).map((key)=>
+                </Card>{this.state.loading === false?(this.state.allPoll === null?<Paper style={{textAlign:'center',padding:20,marginTop:20,color:'#aaaaaa'}} zDepth={1} >Nothing Poll</Paper>:Object.keys(this.state.allPoll).map((key)=>
                         <Paper style={{padding:10,marginTop:20,cursor:'pointer'}} onTouchTap={()=>this.props.history.push(`/m/${key}`)}>
                          <p style={{fontWeight:'bold'}} >{this.state.allPoll[key].teamOne} vs {this.state.allPoll[key].teamTwo}</p>
                          <p>{this.state.allPoll[key].descript}</p>
                         </Paper>
-                    )):null}
+                    )):null}</div>: <Card >
+                        <CardHeader style={{fontWeight:'bold'}} title="You're not Sign in" />
+                        <CardText>
+                            <p>Tap <RaisedButton label="Here" onTouchTap={()=>this.props.history.push('/profile')} secondary /> to Sign In</p>
+                        </CardText>
+                    </Card>):<div style={{textAlign:'center',padding:10}} ><CircularProgress /></div>}
                      <Dialog
                         title="Error"
-                        actions={'actions'}
+                        actions={<FlatButton primary label="OK" onTouchTap={()=>this.setState({alert:false})} />}
                         modal={false}
                         open={this.state.alert}
                         onRequestClose={()=>this.setState({alert:false})}
