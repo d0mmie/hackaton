@@ -25,6 +25,12 @@ export default {
                     payload:point
                 })
             },
+            SetCheerData:(data)=>{
+                dispatch({
+                    type:"SET_CheerMatch",
+                    payload:data
+                })
+            },
             dispatch:dispatch
         }
     },
