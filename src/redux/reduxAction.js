@@ -13,6 +13,12 @@ export default {
                     payload:user
                 })
             },
+            SetSelected:(selected)=>{
+                dispatch({
+                    type:"SET_Navigation",
+                    payload:selected
+                })
+            },
             dispatch:dispatch
         }
     },
