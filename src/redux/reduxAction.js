@@ -19,6 +19,12 @@ export default {
                     payload:selected
                 })
             },
+            SetCheerPoint:(point)=>{
+                dispatch({
+                    type:"SET_CheerPoint",
+                    payload:point
+                })
+            },
             dispatch:dispatch
         }
     },
